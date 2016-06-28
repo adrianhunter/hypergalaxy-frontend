@@ -1,0 +1,26 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:src": "watch-run --initial -p 'src/**/*.ls' 'npm run build-js'",
+    "build": "browserify -d -t browserify-livescript src/index.ls > build/app.js",
+    "build-old": "lsc --output build -c src/app.ls",
+    "build-foo": "browserify build-js/index.js > build/app.js",
+    "build-js": "lsc -b -co build-js src && npm run build-foo"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.1.6",
+    "fastclick": "^1.0.6",
+    "mithril": "^0.2.5",
+    "mmsvg": "^1.1.1",
+    "moment": "^2.13.0",
+    "polythene": "^0.2.30"
+  },
+  "devDependencies": {
+    "browserify-livescript": "^0.2.3"
+  }
+}
